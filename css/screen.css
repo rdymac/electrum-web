@@ -27,6 +27,7 @@ time, mark, audio, video {
 /* line 20, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
+  letter-spacing:.7pt;
 }
 
 /* line 22, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
@@ -348,12 +349,15 @@ td {
 
 /* line 37, ../_sass/screen.sass */
 header {
+  margin-bottom: 20px;
+  padding:20px 15px;
   height: 70px;
   border-bottom: 1px solid #ededed;
-  background: #f2f2f2;
-  padding: 15px;
+  background: #3258C3;/*#f2f2f2*/
+  background: #3258C3 url(../media/header_bg.png) no-repeat center top;
+
   /*overflow: hidden;*/
-  margin-bottom: 20px;
+ 
 }
 /* line 44, ../_sass/screen.sass */
 header nav {
@@ -413,6 +417,9 @@ a, a:visited { text-decoration:none; }
 a:hover, a:active, a:focus { text-decoration:underline; }
 a:active { position:relative; top:1px; }
 
+header a, header a:visited { color:#fff; }
+header a:active { color:#319AFF; }
+
 body { padding-bottom:10px; background-color:#ddd; }
 
 header ul, header ol {
@@ -427,25 +434,26 @@ header nav {
 }
 
 .header {
-	width:380px;
-	overflow:hidden;
+	height:100px;
+	padding-top:10px;
+	width:320px;
 	}
 	#logo {
-		width:300px;
-		height:45px;
+		width:282px;
+		height:54px;
 		display:block;
-		background:url(../media/electrum_text.png) no-repeat 0 0;
-		background-image: -webkit-image-set( url(../media/electrum_text.png) 1x, url(../media/electrum_text.png) 2x);
-		background-size:300px 45px;
+		background:url(../media/electrum_logo.png) no-repeat 0 0;
+		background-image: -webkit-image-set( url(../media/electrum_logo.png) 1x, url(../media/electrum_logo_@2x.png) 2x);
+		background-size:282px 54px;
 		}
-		#logo span, #electrum_logo img { position:absolute; top:100%; left:-99999px; }
+		#logo span, #electrum_logo img, #logo + h2 { position:absolute; top:100%; left:-99999px; }
 	
 	.header h2 {
 		margin-top:45px; 
 		font-weight:300;
 	}
 	
-	#electrum_logo {
+	/*#electrum_logo {
 		width:70px;
 		height:66px;
 		display:block;
@@ -453,10 +461,30 @@ header nav {
 		background:url(../media/electrum_logo.png) no-repeat 0 0;
 		background-image: -webkit-image-set( url(../media/electrum_logo.png) 1x, url(../media/electrum_logo.png) 2x);
 		background-size:70px 66px;
-	}
+	}*/
 
-nav#translations { margin-top:0 !important; }
-.translations a { font-weight: 300; }
+nav#translations {
+	margin-right:15px;
+	margin-top:0 !important;
+	padding-right:20px;
+	display:block;
+	height:21px;
+	background: transparent url('../media/globe.png') no-repeat right center;
+	background-size: 18px 18px;
+}
+#translations li {
+	font-weight: 300;
+	position:absolute;
+	top:100%;
+	left:-99999px;
+	display:none;
+	}
+	#translations:hover li {
+		position:relative;
+		top:0;
+		left:0;
+		display:block;
+	}
 
 section.container { text-align:justify; }
 
